@@ -1,4 +1,10 @@
 #!/bin/bash
+#this is a postupdate script to populate the changes of the  git repo, to the 
+#webroot folder of the site. You firstly create a bare repository on your home
+#folder . then fill up the TARGET and GIT_DIR below, and the branch you 
+#are working. Add this server as a remote git server on your working computer
+#and each change you push will automatically be pushed to the target webroot.
+
 TARGET="/var/www/html/example-domain.com"
 GIT_DIR="/home/dvalilis/bare/example-domain.git"
 BRANCH="master"
