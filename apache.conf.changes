@@ -1,0 +1,7 @@
+#apache conf change from AllowOverride none to AllowOverride All for the webroot directory, in order to globally enable .htaccess support
+<Directory /var/www/>
+        Options Indexes FollowSymLinks
+        AllowOverride All
+        Require all granted
+</Directory>
+
