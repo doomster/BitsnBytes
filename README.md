@@ -33,3 +33,6 @@ This is a script to put in a bare repo hooks folder. if you put this repository 
 
 
  
+### post-installation.sh
+
+Post installation script, to run after deploying new debian VPS. i haven't tested it yet
