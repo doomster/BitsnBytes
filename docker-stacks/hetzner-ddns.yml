@@ -7,3 +7,4 @@ services:
       - ZONE_NAME=example.com
       - API_TOKEN=my-secret-api-token
       - RECORD_TYPE=A 
+      - RECORD_NAME=sub ##from sub.example.com
