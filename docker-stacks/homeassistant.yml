@@ -1,0 +1,13 @@
+version: '3.1'
+
+services:
+  homeassistant:
+    image: ghcr.io/home-assistant/home-assistant:stable
+    container_name: hass.dmstr.eu
+    restart: unless-stopped
+    network_mode: "host"
+    volumes:
+      - /opt/hass:/config
+    environment:
+      - TZ=Europe\Athens
+
