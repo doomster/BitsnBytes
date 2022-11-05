@@ -1,0 +1,18 @@
+version: '3'
+services:
+  app:
+    image: 'jc21/nginx-proxy-manager:latest'
+    container_name: njinx-proxy-manager
+    restart: unless-stopped
+    networks: 
+      - nginx_bridge_lan
+    ports:
+      - '80:80'
+      - '81:81'
+      - '443:443'
+    volumes:
+      - /media/nginxproxymanager/data:/data
+      - /media/nginxproxymanager/letsencrypt:/etc/letsencrypt
+networks:
+  nginx_bridge_lan:
+    external: true
