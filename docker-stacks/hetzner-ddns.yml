@@ -1,0 +1,9 @@
+version: "3.1"
+services:
+  hetznerddns:
+    container_name: hetzner-ddns
+    image: kutzilla/hetzner-ddns
+    environment:
+      - ZONE_NAME=example.com
+      - API_TOKEN=my-secret-api-token
+      - RECORD_TYPE=A 
