@@ -1,0 +1,11 @@
+version: "3.1"
+services:
+  discordbot:
+    container_name: discord-bot
+    image: doomstereu/discord-bot-php:latest 
+    volumes:
+      - /opt/discordphp/discordbot.php:/usr/src/myapp/discordbot.php
+      - /opt/discordphp/odbwarcheck.txt:/usr/src/myapp/odbwarcheck.txt
+    restart: unless-stopped
+#    environment:
+#      - DISCORD_BOT_API= 
