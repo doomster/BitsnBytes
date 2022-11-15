@@ -1,0 +1,56 @@
+version: "2.1"
+services:
+  radarr:
+    image: lscr.io/linuxserver/radarr:latest
+    container_name: radarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Athens
+    volumes:
+      - /opt/docker/radarr:/config
+      - /media/Movies:/movies #optional
+      - /media/Downloads:/downloads #optional
+    ports:
+      - 7878:7878
+    restart: unless-stopped
+  sonarr:
+    image: lscr.io/linuxserver/sonarr:latest
+    container_name: sonarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Athens
+    volumes:
+      - /opt/docker/sonarr:/config
+      - /media/Series:/tv #optional
+      - /media/Downloads:/downloads #optional
+    ports:
+      - 8989:8989
+    restart: unless-stopped
+  bazarr:
+    image: lscr.io/linuxserver/bazarr:latest
+    container_name: bazarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Athens
+    volumes:
+      - /opt/docker/bazarr:/config
+      - /media/Movies:/movies #optional
+      - /media/Series:/tv #optional
+    ports:
+      - 6767:6767
+    restart: unless-stopped
+  prowlarr:
+    image: lscr.io/linuxserver/prowlarr:develop
+    container_name: prowlarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Athens
+    volumes:
+      - /opt/docker/prowlarr:/config
+    ports:
+      - 9696:9696
+    restart: unless-stopped
