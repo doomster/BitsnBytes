@@ -1,0 +1,58 @@
+External SMTP settings for FreePBX:
+-------------------------------------------------------------------------
+nano /etc/postfix/sasl_passwd
+
+[mail.your-server.de]:587 pbx@eassist.gr:your-smtp-password
+
+chmod 400 /etc/postfix/sasl_passwd
+postmap /etc/postfix/sasl_passwd
+chown postfix /etc/postfix/sasl_passwd
+
+-------------------------------------------------------------------------
+nano /etc/postfix/main.cf
+
+Add these lines at the end of file
+
+relayhost = [mail.your-server.de]:587
+smtp_sasl_auth_enable = yes
+smtp_sasl_password_maps = hash:/etc/postfix/sasl_passwd
+smtp_sasl_security_options = noanonymous
+smtp_use_tls = yes
+
+smtp_generic_maps = hash:/etc/postfix/generic
+
+------------------------------------------------------------------------
+
+nano /etc/postfix/generic
+
+Add these lines at the end of file and edit accordingly 
+
+root dimitris@eassist.gr
+root@localhost dimitris@eassist.gr
+root@localhost.localdomain dimitris@eassist.gr
+root@freepbx dimitris@eassist.gr
+root@freepbx.localdomain dimitris@eassist.gr
+asterisk dimitris@eassist.gr
+asterisk@localhost dimitris@eassist.gr
+asterisk@localhost.localdomain dimitris@eassist.gr
+asterisk@freepbx dimitris@eassist.gr
+asterisk@freepbx.localdomain dimitris@eassist.gr
+vm@asterisk dimitris@eassist.gr
+asterisk@ dimitris@eassist.gr
+@freepbx.localdomain @eassist.gr
+
+------------------------------------------------------------------------
+
+postmap /etc/postfix/generic
+
+restart postfix
+
+systemctl reload postfix
+
+test mail with 
+
+[root@freepbx ~]# sudo -u asterisk mail -s TestEmail info@eassist.gr
+
+
+if you recieve mail, you are done. 
+
