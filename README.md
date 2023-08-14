@@ -32,6 +32,9 @@ lol, cause you know, since im backing up all these, why the hell should i write 
 This is a script to put in a bare repo hooks folder. if you put this repository as a origin on your development pc, every change you push , will be automatically updated in the webroot folder, thus giving you the ability to use versioning for coding AND testing your code.
 
 
+### SMTP settings for FreePBX 
+
+how to setup external smtp on a freepbx installation, so that you can get mails.
  
 ### post-installation.sh
 
