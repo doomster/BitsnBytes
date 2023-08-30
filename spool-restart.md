@@ -1,3 +1,9 @@
+restart spool service on windows , removing any print jobs in between.
+
+create a bat file with the below code:
+
+
+```
 @echo off 
 rem stop spooler 
 net stop spooler 
@@ -10,3 +16,5 @@ ping -n 4 127.0.0.1 > null
 rem start spooler 
 net start spooler 
 echo done!
+
+```
