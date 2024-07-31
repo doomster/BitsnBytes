@@ -185,4 +185,4 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ---
 
-Feel free to contribute or open an issue on the [GitHub repository](https://github.com/your-repo-link) if you encounter any problems or have suggestions for improvements.
+Feel free to contribute or open an issue on the [GitHub repository](https://github.com/[your-repo-lin](https://github.com/doomster/BitsnBytes) if you encounter any problems or have suggestions for improvements.
