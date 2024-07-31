@@ -172,7 +172,7 @@ Use the MikroTik shell to access the MongoDB container and set up the database a
 This step ensures that the MongoDB instance is set up with the necessary database and user for the UniFi application to function correctly.
 
 ### 12. Start up Things!
-Start up the mongodb container give it 30 seconds for first boot, then start up the unifi container. Or restart the CHR. when CHR starts the scripts created on step 9-10 do this exact routine. 
+Start up the mongodb container give it 30 seconds for first boot, then start up the unifi container. Or restart the CHR. when CHR starts the scripts created on step 9-10 do this exact routine. Afterwards visit your CHRs IP or domain with https://CHR_IP_OR_DOMAIN:8443
 
 ## Conclusion
 
